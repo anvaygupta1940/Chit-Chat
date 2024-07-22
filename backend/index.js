@@ -19,8 +19,9 @@ dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: process.env.FRONTEND_URL,  // front end url
-    credentials: true
+    origin: [process.env.FRONTEND_URL],  // front end url
+    credentials: true,
+    methods: ["GET", "POST"]
 }));
 
 
